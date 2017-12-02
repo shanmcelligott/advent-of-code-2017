@@ -21,16 +21,15 @@ numArrLength = len(numArr);
 
 # Count matches
 totalSum = 0;
-for i in range(0,numArrLength):
+for currElIndex in range(0,numArrLength):
 
-    currEl = numArr[i];
-    prevEl = None;
-    if (i + 1) != numArrLength:
-        prevEl = numArr[i+1];
-    else:
-        prevEl = numArr[0];
+    currEl = numArr[currElIndex];
+    matchElIndex = currElIndex + numArrLength/2;
+    if matchElIndex >= numArrLength:
+        matchElIndex = currElIndex - numArrLength/2;
+    matchEl = numArr[matchElIndex];   
 
-    if currEl == prevEl:
+    if currEl == matchEl:
         totalSum += currEl;
 
 print 'Total Sum', totalSum
