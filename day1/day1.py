@@ -19,11 +19,8 @@ for x in fileContents:
     numArr.append(int(x))
 numArrLength = len(numArr);
 
-# 
-# Initialize macth array with all 0's
-matchArr = [0] * 10;
-
-# Count matchs
+# Count matches
+totalSum = 0;
 for i in range(0,numArrLength):
 
     currEl = numArr[i];
@@ -34,12 +31,6 @@ for i in range(0,numArrLength):
         prevEl = numArr[0];
 
     if currEl == prevEl:
-        matchArr[currEl] = matchArr[currEl] + 1;
-
-totalSum = 0;
-for i in range(0,10):
-    elSum = i*matchArr[i];
-    print 'For', i, ', found ', matchArr[i], 'matches; sum =', elSum
-    totalSum += elSum;
+        totalSum += currEl;
 
 print 'Total Sum', totalSum
